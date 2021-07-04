@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+
+    <title>BMI Calculator</title>
+
+</head>
+<body>
+    <div class="main">
+    <h2> Health Genie</h2>
+    <h4>Health checking app</h4>
+    <h3>Using BMI</h3>
+    <form onsubmit="return calcBMI();">
+        System:
+        <label>
+          <input type="radio" id="bmi-metric" name="bmi-measure" onchange="measureBMI()" checked/> Metric
+        </label>
+        <label>
+          <input type="radio" id="bmi-imperial" name="bmi-measure" onchange="measureBMI()"/> Imperial
+        </label>
+        <br><br>
+  
+        Weight:
+        <input id="bmi-weight" type="number" min="1" max="635" required/> 
+        <span id="bmi-weight-unit">KG</span>
+        <br><br>
+  
+        Height:
+        <input id="bmi-height" type="number" min="30" max="272" required/>
+        <span id="bmi-height-unit">CM</span>
+        <br><br>
+  
+        <input type="submit" class="CalculateBMI" value="Calculate BMI" />
+        <div id="bmi-results"></div>
+      </form>
+      
+      </div>
+      <script src="app.js"></script>
+</body>
+</html>

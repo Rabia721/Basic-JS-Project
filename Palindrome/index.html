@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Pallindrome Checker
+    </title>
+    <script>
+        function checkpalindrome() {
+            var val = document.getElementById("input").value;
+            if (val.length < 2) {
+                document.getElementById("success").innerHTML = "<h2  style='color:red;'>Invalid Input</h2>";
+                return
+            }
+
+            var reverse = val.split('').reverse().join('')
+
+            var c =
+                val.toLowerCase() == reverse.toLowerCase() ?
+                "<h2 style=;color:green;'>Yes, the given word is a pallindrome</h2>" :
+                "<h2 style='color:red;' >Oh No, the given word is not a pallindrome</h2>";
+            document.getElementById("success").innerHTML = c;
+            return;
+        }
+    </script>
+
+    <style>
+        .palindrome {
+            position: absolute;
+            top: 25%;
+            left: 40%;
+            border: 1px solid #000;
+            height: 30vh;
+            width: 15%;
+        }
+        
+        .palindrome-title h1 {
+            text-align: center;
+        }
+        
+        .palindrome-fields {
+            margin-left: 20px;
+        }
+        
+        .fields-user {
+            margin-top: 40px;
+        }
+        
+        .fields-user input {
+            padding: 10px;
+            border-radius: 8px;
+            border: none;
+            border: 1px solid #000 !important;
+        }
+        
+        .fields-submit {
+            position: relative;
+            top: 40px;
+            left: 20px;
+        }
+        
+        .success {
+            position: absolute;
+            margin-top: 50px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class='palindrome'>
+        <div class='palindrome-title'>
+            <h1>Check Pallindrome</h1>
+        </div>
+        <div class='palindrome-fields'>
+            <div class='fields-user'>
+                <input placeholder='Enter the search text' type='text' id="input">
+            </div>
+            <div class='fields-submit'>
+                <input type='submit' value='Check Palindrome' onclick="checkpalindrome()">
+            </div>
+            <div class='success' id="success">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
